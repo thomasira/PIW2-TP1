@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Thomas Aucoin-Lo">
+
+    <link rel="stylesheet" href="./assets/style/master.css">
+    <script src="./assets/script/main.js" type="module"></script>
+
+    <title>TP1-PI2</title>
+</head>
+<body>
+    <header>
+        <h1>TP1 - PI2</h1>
+        <p>classe et héritage</p>
+    </header>
+    
+    <main data-js-librairie>
+        <header>
+            <h2>Librairie</h2> 
+            <div class="shop-modal">
+                <button class="shop-icon" data-js-trigger="shop"><img src="./assets/icon/book.png" alt="shop icon"></button>
+                <div data-js-modal="panier" class="invisible">
+                    <header>
+                        <p>Panier achat</p>
+                    </header>
+                    <div data-js-liste-panier>
+
+                    </div>
+                    <div>
+                        <p>total: <strong data-js-total>$</strong></p>
+                    </div>
+                    <button data-js-trigger="vider">vider le payer</button>
+                </div>
+            </div>
+        </header>
+        <div class="book-modal invisible" data-js-modal="livre">
+            <article>
+                <picture>
+                    <img src="./assets/img/ca-veut-dire-quoi-quand-mon-chat-fait-ca.jpeg" alt="">
+                </picture>
+                <div>
+                    <h2 data-js-livre="titre"><small>Titre: </small>titre</h2>
+                    <h3 data-js-livre="auteur"><small>Auteur: </small>titre</h3>
+                    <h3 data-js-livre="editeur"><small>Éditeur: </small>titre</h3>
+                    <h3 data-js-livre="pages"><small>Pages: </small>titre</h3>
+                    <p data-js-livre="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat architecto, dolore delectus odit, exercitationem odio iusto incidunt impedit error reiciendis at dolorum voluptates? Odit quam laudantium, incidunt animi consequatur voluptatibus?</p>
+                </div>
+            </article>
+            <div>
+                <span class="book-exit" data-js-trigger="exit-button"></span>
+            </div>
+        </div>
+        <section class="librairie-box">
+            <aside class="filter-box">
+                <button>Tous</button>
+                <button>Nouveautés</button>
+                <button>Littérature</button>
+                <button>Art de vivre</button>
+                <button>BD, jeunesse, humour</button>
+                <button>Culture et société</button>
+                <button>Loisirs, tourisme, nature</button>
+                <button>Savoir et science</button>
+            </aside>
+            <div data-js-librairie-conteneur>
+
+                <!-- template -->
+                <!-- <article class="book-card" data-js-book>
+                    <picture>
+                        <img src="./assets/img/17-equations-qui-ont-change-le-monde.jpeg" alt="">
+                    </picture>
+                    <main>
+                        <h3>Title</h3>
+                        <div>
+                            <strong>prix</strong>
+                            <button class="button-std">Ajouter au panier</button>
+                        </div>
+                    </main>
+                </article> -->
+                <!-- -->
+            </div>
+        </section>
+    </main>
+</body>
+</html>

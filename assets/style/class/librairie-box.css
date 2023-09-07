@@ -1,0 +1,16 @@
+
+.librairie-box{
+    display: flex;
+    flex-flow: row;
+    gap: var(--padMed);
+}
+.librairie-box aside {
+    flex: 1;
+}
+.librairie-box>div {
+    flex: 3; 
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: var(--padLrg);
+    column-gap: var(--padMed);
+}

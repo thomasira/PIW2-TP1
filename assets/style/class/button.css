@@ -1,0 +1,10 @@
+
+.button-std {
+    padding: 3px 7px;
+    border-radius: 2px;
+    border: 1px solid var(--colorDark);
+    background-color: var(--colorLight);
+}
+.button-std:hover {
+    cursor: pointer;
+}

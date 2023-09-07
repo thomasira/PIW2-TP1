@@ -1,0 +1,15 @@
+
+.shop-icon{
+    padding: var(--padSmlr);
+    background: none;
+    border: none;
+}
+.shop-icon>img{
+    width: 40px;
+}
+.shop-icon:hover{
+    cursor: pointer;
+}
+
+
+

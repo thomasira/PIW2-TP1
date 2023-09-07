@@ -1,0 +1,20 @@
+
+.filter-box{
+    align-self: start;
+    max-width: max-content;
+    padding: var(--padSml);
+    background-color: var(--colorLight);
+    box-shadow: 2px 2px 3px var(--colorShadow);
+}
+.filter-box button{
+    display: block;
+    border: none;
+    background: none;
+    font-size: var(--fontSml);
+}
+.filter-box button:hover{
+    cursor: pointer;
+}
+.filter-box>*+*{
+    margin-top: var(--padSmlr);
+}

@@ -1,0 +1,22 @@
+
+.book-card {
+    display: flex;
+    flex-flow: column;
+    gap: var(--padSml);
+    justify-content: space-between;
+}
+.book-card img{
+    width: 100%;
+    height: auto;
+}
+.book-card h3 {
+    font-weight: normal;
+}
+.book-card div {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+.book-card main>*+* {
+    margin-top: var(--padSmlr);
+}

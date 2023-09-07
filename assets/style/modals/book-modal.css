@@ -1,0 +1,49 @@
+
+.book-modal{
+    margin-top: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    gap: var(--padLrg);
+    padding: var(--padHuge);
+    opacity: 1;
+    background-color: rgba(56, 56, 56, 0.714);
+}
+.book-modal article{
+    flex: 6;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    gap: var(--padHuge);
+    padding: var(--padLrg);
+    height: auto;
+    background-color: var(--colorLight);
+}
+.book-modal>div{
+    flex: 0 0 1;
+}
+.book-modal article>*{
+    flex: 1;
+}
+.book-modal picture{
+    max-width: max-content;
+}
+.book-modal img{
+    display: block;
+    width: 100%;
+}
+.book-modal h2,h3{
+    font-weight: normal;
+}
+.book-modal h2{
+    font-size: var(--fontMed);
+}
+.book-modal article>div>*+*{
+    margin-top: var(--padSml);
+}
+
