@@ -1,5 +1,5 @@
 import GestionnaireLibrairie from "./GestionnaireLibrairie.js";
-import GestionnaireDonnees from "./GestionnaireDonnees.js";
+/* import GestionnaireDonnees from "./GestionnaireDonnees.js"; */
 
 export class PanierAchat {
     constructor() {
@@ -17,8 +17,8 @@ export class PanierAchat {
         this.modalBtn.addEventListener("click", this.afficherPanier.bind(this));
         document.addEventListener("ajouterPanier", this.onHandleEvent.bind(this));
         this.btnVider.addEventListener('click', this.viderPanier.bind(this));
-        const livres = GestionnaireDonnees.recupererDonneesLocales("panier");
-        if(livres) livres.forEach(livre => this.ajouterAuPanier(livre));
+/*         const livres = GestionnaireDonnees.recupererDonneesLocales("panier"); */
+  /*       if(livres) livres.forEach(livre => this.ajouterAuPanier(livre)); */
         this.setPanierHTML();
     }
 
@@ -31,11 +31,11 @@ export class PanierAchat {
         let prixTotal = 0;
         this.listeLivre.innerHTML = "";
         this.panier.forEach(livre => {
-            prixTotal += livre.prix;
+            prixTotal += livre.getPrix();
             const livreInfo = `
                 <div class="item">
-                    <small>${livre.titre}</small>
-                    <div class="prix">${livre.prix}$</div>
+                    <small>${livre.getTitre()}</small>
+                    <div class="prix">${livre.getPrix()}$</div>
                 </div>`;
             this.listeLivre.insertAdjacentHTML('beforeend', livreInfo);
         });
@@ -44,7 +44,7 @@ export class PanierAchat {
 
     ajouterAuPanier(livre) {
         this.panier.push(livre);
-        GestionnaireDonnees.enregistrerDonneesLocales("panier", this.panier);
+/*         GestionnaireDonnees.enregistrerDonneesLocales("panier", this.panier); */
     }
 
     afficherPanier() {

@@ -25,22 +25,28 @@ export class Livre {
         this.conteneur = document.querySelector('[data-js-librairie-conteneur]');
     }
 
+    getTitre() {
+        return this.#titre;
+    }
+    getPrix() {
+        return this.#prix;
+    }
     injectThumb() {
-        this.conteneur.insertAdjacentHTML('beforeend', `
-            <article class="book-card" data-js-book="${this.#titre}">
-                <picture>
-                    <img src="${this.#image}" alt="${this.#image}" data-js-trigger="book">
-                </picture>
-                <main>
-                    <h3>${this.#titre}</h3>
-                    <div>
-                        <strong>${this.#prix} $</strong>
-                        <button class="button-std" data-js-trigger="ajout">Ajouter</button>
-                    </div>
-                </main>
-            </article>
-        `);
-        const btnAjout = this.conteneur.querySelector('[data-js-trigger="ajout"]');
+        const elLivre = `
+        <article class="book-card" data-js-book="${this.#titre}">
+            <picture>
+                <img src="${this.#image}" alt="${this.#image}" data-js-trigger="book">
+            </picture>
+            <main>
+                <h3>${this.#titre}</h3>
+                <div>
+                    <strong>${this.#prix} $</strong>
+                    <button class="button-std" data-js-trigger="ajout">Ajouter</button>
+                </div>
+            </main>
+        </article>`;
+        this.conteneur.insertAdjacentHTML('beforeend',elLivre);
+        const btnAjout = this.conteneur.lastElementChild.querySelector('[data-js-trigger="ajout"]');
         btnAjout.addEventListener('click', function() {
             const donnees = { detail: this };
             const event = new CustomEvent("ajouterPanier", donnees);
