@@ -13,13 +13,14 @@ export class Popup {
         document.addEventListener('ajouterPop', () => {
             this.el.classList.remove('invisible');
 
+            
+            if(!this.isTimed) this.el.classList.add('invisible');
             this.isTimed = true;
-            console.log(this.isTimed)
             setTimeout(() => {
-                this.isTimed = false;
-                console.log(this.isTimed)
-                /* if(!this.el.classList.contains('invisible')) this.el.classList.add('invisible'); */
+                if(!this.isTimed) this.isTimed = false;
             }, 3000);
+            
+
         })
     }
 
