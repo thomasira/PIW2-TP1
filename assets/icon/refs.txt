@@ -1,4 +1,4 @@
 
-books.png -> <a href="https://www.flaticon.com/free-icons/bookshelf" title="bookshelf icons">Bookshelf icons created by smalllikeart - Flaticon</a>
-
 book.png -> <a href="https://www.flaticon.com/free-icons/bookshelf" title="bookshelf icons">Bookshelf icons created by Smashicons - Flaticon</a>
+
+trash.png -> https://icons8.com/icons/set/trash

@@ -36,10 +36,13 @@ export class PanierAchat {
                 <div class="item-panier">
                     <small>${livre.titre}</small>
                     <div class="prix">${livre.prix}$</div>
+                    <img data-js-trigger="jeterItem" src="./assets/icon/trash.png" alt="icon-poubelle" title="enlever l'item">
                 </div>`;
             this.listeLivre.insertAdjacentHTML('beforeend', livreInfo);
         });
         this.elPrix.textContent = prixTotal;
+        const btnEnlever = this.listeLivre.lastElementChild.querySelector('[data-js-trigger="jeterItem"]');
+        console.log(btnEnlever)
     }
 
     ajouterAuPanier(livre) {
