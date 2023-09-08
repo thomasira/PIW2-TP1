@@ -1,15 +1,12 @@
 
-.shop-icon{
-    padding: var(--padSmlr);
+.panier-icon{
+    padding: var(--gapSmlr);
     background: none;
     border: none;
 }
-.shop-icon>img{
+.panier-icon>img{
     width: 40px;
 }
-.shop-icon:hover{
+.panier-icon:hover{
     cursor: pointer;
 }
-
-
-

@@ -1,0 +1,26 @@
+body>header{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    gap: var(--gapLrg);
+    padding: var(--gapSmlr);
+    background-color: var(--colorDark);
+    color: var(--colorLight);
+}
+body>header>h1{
+    font-size: var(--fontSml);
+}
+body>footer{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--gapLrg);
+    padding: var(--gapSmlr);
+    background-color: var(--colorDark);
+    color: var(--colorLight);
+}
+body>footer>h4{
+    font-size: var(--fontSml);
+    font-weight: normal;
+}

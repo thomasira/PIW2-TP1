@@ -5,7 +5,7 @@ export class PanierAchat {
     constructor() {
         this.panier = [];
         const GL = GestionnaireLibrairie.instance;
-        this.modalBtn = GL.el.querySelector('[data-js-trigger="shop"]');
+        this.modalBtn = GL.el.querySelector('[data-js-trigger="panier"]');
         this.modalBox = GL.el.querySelector('[data-js-modal="panier"]');
         this.listeLivre = this.modalBox.querySelector('[data-js-liste-panier]');
         this.elPrix = this.modalBox.querySelector('[data-js-total]');
@@ -33,7 +33,7 @@ export class PanierAchat {
         this.panier.forEach(livre => {
             prixTotal += livre.prix;
             const livreInfo = `
-                <div class="item">
+                <div class="item-panier">
                     <small>${livre.titre}</small>
                     <div class="prix">${livre.prix}$</div>
                 </div>`;

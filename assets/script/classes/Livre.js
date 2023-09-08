@@ -11,7 +11,7 @@ export class Livre {
         this.description = livre.description;
         this.prix = livre.prix;
         this.editeur = livre.editeur;
-        this.pages = livre.page;
+        this.pages = livre.pages;
         this.image = livre.image;
         this.nouveaute = livre.nouveaute;
         this.categorie = livre.categorie;

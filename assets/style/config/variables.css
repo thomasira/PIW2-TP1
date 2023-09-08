@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Faustina:ital,wght@0,400;0,500;1,300&family=Mulish:wght@300;400&display=swap');
+
+:root{
+    
+    /* Palette de couleurs */
+    --colorDark: rgb(7, 8, 6);
+    --colorShadow: rgba(7, 8, 6, 0.507);
+    --colorMain: rgb(81, 95, 125);
+    --colorSec: rgb(202, 170, 110);;
+    --colorLight: rgb(213, 218, 230);;
+
+    /* Taille de polices */
+    --fontSml: 14px;
+    --fontText: 18px;
+    --fontMed: 24px;
+    --fontLrg: 36px;
+    --fontLrger: 48px;
+    --fontLrgest: 96px;
+
+    /* Police */
+    --fontText: 'Mulish', sans-serif;
+    --fontHead: 'Faustina', serif;
+
+    /* Espacement */
+    --gapSmlst: 5px;
+    --gapSmlr: 10px;
+    --gapSml: 15px;
+    --gapMed: 20px;
+    --gapLrg: 40px;
+    --gapHuge: 80px;
+}

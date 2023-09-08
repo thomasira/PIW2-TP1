@@ -9,8 +9,9 @@
     display: flex;
     flex-flow: row;
     justify-content: space-between;
-    gap: var(--padLrg);
-    padding: var(--padHuge);
+    align-items: start;
+    gap: var(--gapLrg);
+    padding: var(--gapHuge);
     opacity: 1;
     background-color: rgba(56, 56, 56, 0.714);
 }
@@ -19,8 +20,8 @@
     display: flex;
     flex-flow: row wrap;
     align-items: center;
-    gap: var(--padHuge);
-    padding: var(--padLrg);
+    gap: var(--gapHuge);
+    padding: var(--gapLrg);
     height: auto;
     background-color: var(--colorLight);
 }
@@ -44,6 +45,6 @@
     font-size: var(--fontMed);
 }
 .book-modal article>div>*+*{
-    margin-top: var(--padSml);
+    margin-top: var(--gapSml);
 }
 

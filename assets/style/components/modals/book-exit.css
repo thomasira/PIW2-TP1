@@ -1,0 +1,12 @@
+
+.book-exit{
+    display: block;
+    font-size: var(--fontLrgest);
+    color: var(--colorLight);
+    transform: rotate(45deg);
+    padding: 0 var(--gapSml);
+}
+
+.book-exit:hover{
+    cursor: pointer;
+}

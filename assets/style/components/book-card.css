@@ -2,7 +2,7 @@
 .book-card {
     display: flex;
     flex-flow: column;
-    gap: var(--padSml);
+    gap: var(--gapSml);
     justify-content: space-between;
 }
 .book-card img{
@@ -18,5 +18,5 @@
     justify-content: space-between;
 }
 .book-card main>*+* {
-    margin-top: var(--padSmlr);
+    margin-top: var(--gapSmlr);
 }

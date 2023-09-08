@@ -4,29 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Thomas Aucoin-Lo">
-
-    <link rel="stylesheet" href="./assets/style/master.css">
+    <link rel="stylesheet" href="./assets/style/main.css">
     <script src="./assets/script/main.js" type="module"></script>
-
     <title>TP1-PI2</title>
 </head>
 <body>
     <header>
-        <h1>TP1 - PI2</h1>
-        <p>classe et héritage</p>
+        <h1>TP1 - PIW2</h1>
+        <p>POO - Relations de classes et événements personnalisés</p>
     </header>
     
     <main data-js-librairie>
+
+
         <header>
             <h2>Librairie</h2> 
-            <div class="shop-modal">
-                <button class="shop-icon" data-js-trigger="shop"><img src="./assets/icon/book.png" alt="shop icon"></button>
+            <div class="panier-modal">
+                <button class="panier-icon" data-js-trigger="panier"><img src="./assets/icon/book.png" alt="shop icon" title="panier"></button>
+
+                <!-- panier d'achat -->
                 <div data-js-modal="panier" class="invisible">
                     <header>
                         <p>Panier achat</p>
                     </header>
                     <div data-js-liste-panier>
-                        <!--injecter liste ici -->
+                        <!--injecter liste panier ici -->
                     </div>
                     <div>
                         <p>total: <strong data-js-total></strong> $</p>
@@ -35,38 +37,51 @@
                 </div>
             </div>
         </header>
+
+        <!-- modal livre -->
         <div class="book-modal invisible" data-js-modal="livre">
-            <article>
+            <article data-js-modal="livre-conteneur">
                 <picture>
                     <img src="" alt="">
                 </picture>
                 <div>
-                    <h2 data-js-livre="titre"><small>Titre: </small>titre</h2>
-                    <h3 data-js-livre="auteur"><small>Auteur: </small>titre</h3>
-                    <h3 data-js-livre="editeur"><small>Éditeur: </small>titre</h3>
-                    <h3 data-js-livre="pages"><small>Pages: </small>titre</h3>
-                    <p data-js-livre="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat architecto, dolore delectus odit, exercitationem odio iusto incidunt impedit error reiciendis at dolorum voluptates? Odit quam laudantium, incidunt animi consequatur voluptatibus?</p>
+                    <h2 data-js-livre="titre"></h2>
+                    <p><small>Auteur: </small><span data-js-livre="auteur"></span></p>
+                    <p><small>Éditeur: </small><span data-js-livre="editeur"></span></p>
+                    <p><small>pages: </small><span data-js-livre="pages"></span></p>
+                    <p data-js-livre="description"></p>
                 </div>
             </article>
-            <div>
-                <span class="book-exit" data-js-trigger="exit-button"></span>
-            </div>
+            <span class="book-exit" data-js-trigger="exit-button">+</span>
         </div>
+
+
         <section class="librairie-box">
-            <aside class="filter-box" data-js-filtreBox>
-                <button data-js-filtre="tous">Tous</button>
-                <button data-js-filtre="Nouveautés">Nouveautés</button>
-                <button data-js-filtre="Littérature">Littérature</button>
-                <button data-js-filtre="Art de vivre">Art de vivre</button>
-                <button data-js-filtre="BD, Jeunesse, Humour">BD, jeunesse, humour</button>
-                <button data-js-filtre="Culture et société">Culture et société</button>
-                <button data-js-filtre="Loisirs, Tourisme, Nature">Loisirs, tourisme, nature</button>
-                <button data-js-filtre="Savoir et science">Savoir et science</button>
+            <aside>
+                <div class="filter-box" data-js-filtreBox>
+                    <button data-js-filtre="tous">Tous</button>
+                    <button data-js-filtre="Nouveautés">Nouveautés</button>
+                    <button data-js-filtre="Littérature">Littérature</button>
+                    <button data-js-filtre="Art de vivre">Art de vivre</button>
+                    <button data-js-filtre="BD, Jeunesse, Humour">BD, jeunesse, humour</button>
+                    <button data-js-filtre="Culture et société">Culture et société</button>
+                    <button data-js-filtre="Loisirs, Tourisme, Nature">Loisirs, tourisme, nature</button>
+                    <button data-js-filtre="Savoir et science">Savoir et science</button>
+                </div>
             </aside>
             <div data-js-librairie-conteneur>
                 <!-- injecter liste ici -->
             </div>
         </section>
     </main>
+    <footer>
+        <h4>29-08-2023</h4>
+        <div>
+            <p>thomas Aucoin-lo</p>
+            <p>e2395387</p>
+        </div>
+    </footer>
+</body>
+</html>
 </body>
 </html>
