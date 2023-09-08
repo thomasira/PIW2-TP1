@@ -65,6 +65,9 @@ export class Livre {
             document.dispatchEvent(
                 new CustomEvent("ajouterPanier", { detail: this })
             );
+            document.dispatchEvent(
+                new CustomEvent("ajouterPop", { detail: this })
+            );
         });
     }
 }

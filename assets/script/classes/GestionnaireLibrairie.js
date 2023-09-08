@@ -4,6 +4,7 @@ import { livres } from "../../data/livres.js";
 import { ModalLivre } from './ModalLivre.js'
 import { PanierAchat } from './PanierAchat.js';
 import { Filtre } from './Filtre.js';
+import { Popup } from './Popup.js';
 
 export default class GestionnaireLibrairie {
     static instance;
@@ -18,6 +19,7 @@ export default class GestionnaireLibrairie {
         this.panier = new PanierAchat();
         this.modal = new ModalLivre();
         this.filtreBox = new Filtre();
+        this.popup = new Popup;
         this.init();
     }
 

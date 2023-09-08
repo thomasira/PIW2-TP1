@@ -1,0 +1,11 @@
+
+.pop-up{
+    position: fixed;
+    bottom: var(--gapLrg);
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 200px;
+    min-height: 50px;
+    background-color: green;
+    transition: opacity 1s;
+}

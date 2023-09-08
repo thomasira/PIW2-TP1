@@ -17,6 +17,7 @@ export class PanierAchat {
         document.addEventListener('ajouterPanier', this.onHandleEvent.bind(this));
         this.modalBtn.addEventListener('click', this.afficherPanier.bind(this));
         this.btnVider.addEventListener('click', this.viderPanier.bind(this));
+
         const livres = GestionnaireDonnees.recupererDonneesLocales('panier');
         if(livres) livres.forEach(livre => this.ajouterAuPanier(livre));
         this.setPanierHTML();
@@ -30,19 +31,27 @@ export class PanierAchat {
     setPanierHTML() {
         let prixTotal = 0;
         this.listeLivre.innerHTML = '';
-        this.panier.forEach(livre => {
+        this.panier.forEach((livre, index) => {
             prixTotal += livre.prix;
             const livreInfo = `
                 <div class="item-panier">
                     <small>${livre.titre}</small>
                     <div class="prix">${livre.prix}$</div>
-                    <img data-js-trigger="jeterItem" src="./assets/icon/trash.png" alt="icon-poubelle" title="enlever l'item">
+                    <img data-js-jeter="${index}" src="./assets/icon/trash.png" alt="icon-poubelle" title="enlever l'item">
                 </div>`;
             this.listeLivre.insertAdjacentHTML('beforeend', livreInfo);
+            if (this.listeLivre.lastElementChild) {
+                const btnEnlever = this.listeLivre.lastElementChild.querySelector(`[data-js-jeter="${index}"]`);
+                btnEnlever.addEventListener('click', (e) => {
+                    console.log(index);
+                    this.panier.splice(index, 1);
+                    GestionnaireDonnees.enregistrerDonneesLocales('panier', this.panier);
+                    this.setPanierHTML();
+                })
+            }
         });
-        this.elPrix.textContent = prixTotal;
-        const btnEnlever = this.listeLivre.lastElementChild.querySelector('[data-js-trigger="jeterItem"]');
-        console.log(btnEnlever)
+        if(prixTotal == 0) this.elPrix.textContent = "Votre panier est vide.";
+        else this.elPrix.textContent = "Total: " + prixTotal + " $";
     }
 
     ajouterAuPanier(livre) {
