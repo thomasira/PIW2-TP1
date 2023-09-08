@@ -5,8 +5,8 @@ export class PanierAchat {
     constructor() {
         this.panier = [];
         const GL = GestionnaireLibrairie.instance;
-        this.modalBtn = GL.conteneurHTML.querySelector('[data-js-trigger="shop"]');
-        this.modalBox = GL.conteneurHTML.querySelector('[data-js-modal="panier"]');
+        this.modalBtn = GL.el.querySelector('[data-js-trigger="shop"]');
+        this.modalBox = GL.el.querySelector('[data-js-modal="panier"]');
         this.listeLivre = this.modalBox.querySelector('[data-js-liste-panier]');
         this.elPrix = this.modalBox.querySelector('[data-js-total]');
         this.btnVider = this.modalBox.querySelector('[data-js-trigger="vider"]');

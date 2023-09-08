@@ -26,7 +26,7 @@
                         <p>Panier achat</p>
                     </header>
                     <div data-js-liste-panier>
-
+                        <!--injecter liste ici -->
                     </div>
                     <div>
                         <p>total: <strong data-js-total></strong> $</p>
@@ -38,7 +38,7 @@
         <div class="book-modal invisible" data-js-modal="livre">
             <article>
                 <picture>
-                    <img src="./assets/img/ca-veut-dire-quoi-quand-mon-chat-fait-ca.jpeg" alt="">
+                    <img src="" alt="">
                 </picture>
                 <div>
                     <h2 data-js-livre="titre"><small>Titre: </small>titre</h2>
@@ -53,32 +53,18 @@
             </div>
         </div>
         <section class="librairie-box">
-            <aside class="filter-box">
-                <button>Tous</button>
-                <button>Nouveautés</button>
-                <button>Littérature</button>
-                <button>Art de vivre</button>
-                <button>BD, jeunesse, humour</button>
-                <button>Culture et société</button>
-                <button>Loisirs, tourisme, nature</button>
-                <button>Savoir et science</button>
+            <aside class="filter-box" data-js-filtreBox>
+                <button data-js-filtre="tous">Tous</button>
+                <button data-js-filtre="Nouveautés">Nouveautés</button>
+                <button data-js-filtre="Littérature">Littérature</button>
+                <button data-js-filtre="Art de vivre">Art de vivre</button>
+                <button data-js-filtre="BD, Jeunesse, Humour">BD, jeunesse, humour</button>
+                <button data-js-filtre="Culture et société">Culture et société</button>
+                <button data-js-filtre="Loisirs, Tourisme, Nature">Loisirs, tourisme, nature</button>
+                <button data-js-filtre="Savoir et science">Savoir et science</button>
             </aside>
             <div data-js-librairie-conteneur>
-
-                <!-- template -->
-                <!-- <article class="book-card" data-js-book>
-                    <picture>
-                        <img src="./assets/img/17-equations-qui-ont-change-le-monde.jpeg" alt="">
-                    </picture>
-                    <main>
-                        <h3>Title</h3>
-                        <div>
-                            <strong>prix</strong>
-                            <button class="button-std">Ajouter au panier</button>
-                        </div>
-                    </main>
-                </article> -->
-                <!-- -->
+                <!-- injecter liste ici -->
             </div>
         </section>
     </main>
