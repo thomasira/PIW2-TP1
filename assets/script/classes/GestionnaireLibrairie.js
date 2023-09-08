@@ -16,13 +16,13 @@ export default class GestionnaireLibrairie {
         this.listeObjetsLivres = [];
         this.el = el;
         this.panier = new PanierAchat();
+        this.modal = new ModalLivre();
         this.filtreBox = new Filtre();
         this.init();
     }
 
     init(){
         document.addEventListener("filtrer", this.filtrerListe.bind(this));
-
         this.listeLivres.forEach((element, index) => this.listeObjetsLivres.push(new Livre(element, index)));
         this.injecterListe();
     }

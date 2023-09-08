@@ -10,21 +10,25 @@ export class ModalLivre {
         this.elPages = this.conteneur.querySelector('[data-js-livre="pages"]');
         this.elDescription = this.conteneur.querySelector('[data-js-livre="description"]');
         this.elImage = this.conteneur.querySelector('img');
-        this.isVisible = false;
+        this.init();
     }
 
+    init() {
+        document.addEventListener('ouvrirModal', this.open.bind(this));
+    }
     setLivre(livre) {
         this.elTitre.insertAdjacentHTML('beforeend', livre.titre);
         this.elAuteur.insertAdjacentHTML('beforeend', livre.auteur);
         this.elEditeur.insertAdjacentHTML('beforeend', livre.editeur);
         this.elPages.insertAdjacentHTML('beforeend', livre.pages);
         this.elDescription.insertAdjacentHTML('beforeend', livre.description);
-        this.elImage.innerHTML = livre.image;
+        this.elImage.src = livre.image;
+        this.elImage.alt = livre.titre;
     }
 
-    open() {
-        if (this.conteneur.classList.contains('invisible')) this.conteneur.classList.remove('invisible');
-        this.body.classList.add('no-scroll');
+    open(e) {
+        this.setLivre(e.detail);
+        this.conteneur.classList.toggle('invisible');
     }
 
     close() {
