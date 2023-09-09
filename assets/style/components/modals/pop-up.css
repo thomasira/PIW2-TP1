@@ -19,3 +19,8 @@
     content: " a été ajouté au panier!";
     color: var(--colorSuccess);
 }
+
+.pop-up.supprime span::after{
+    content: " a été supprimé du panier!";
+    color: var(--colorKill);
+}

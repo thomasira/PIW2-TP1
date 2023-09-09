@@ -5,13 +5,16 @@
     gap: var(--gapMed);
 }
 .librairie-box aside{
-    flex: 1;
-    position: relative;
+    flex: 0 0 200px;
 }
 .librairie-box>div{
-    flex: 3; 
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    flex: 4;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
     row-gap: var(--gapLrg);
     column-gap: var(--gapMed);
+}
+.librairie-box>div>*{
+    flex: 0 0 250px;
 }

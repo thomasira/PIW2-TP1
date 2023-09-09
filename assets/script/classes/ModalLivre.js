@@ -1,6 +1,11 @@
-
-
+/**
+ * gère le modal
+ */
 export class ModalLivre {
+
+    /**
+     * instancier tous les éléments HTML requis, initialiser
+     */
     constructor() {
         this.body = document.body;
         this.el = document.querySelector('[data-js-modal="livre"]');
@@ -15,12 +20,19 @@ export class ModalLivre {
         this.init();
     }
 
+    /**
+     * ajouter un gest. d'événements sur son élément HTML.
+     */
     init() {
         this.el.addEventListener('click', (e) => {
             if (e.target == this.el || e.target == this.elBtnExit) this.close();
         })
     }
 
+    /**
+     * injecter les données du livre passé en param dans ses éléments HTML
+     * @param {*} livre 
+     */
     setLivre(livre) {
         this.elTitre.innerHTML = livre.titre;
         this.elAuteur.innerHTML = livre.auteur;
@@ -32,12 +44,19 @@ export class ModalLivre {
         this.elImage.alt = "couverture: " + livre.titre;
     }
 
+    /**
+     * appeler setLivre avec les détails de l'événement passé en param. Changer le Css du body et de son élément HTML
+     * @param {*} e 
+     */
     open(e) {
         this.setLivre(e.detail);
         this.body.classList.toggle('no-scroll');
         this.el.classList.toggle('invisible');
     }
 
+    /**
+     * Changer le Css du body et de son élément HTML
+     */
     close() {
         this.el.classList.toggle('invisible');
         this.body.classList.toggle('no-scroll');
