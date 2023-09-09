@@ -4,6 +4,13 @@
     flex-flow: column;
     gap: var(--gapSml);
     justify-content: space-between;
+    box-shadow: var(--shadowStd);
+    border: 5px solid;
+    border-color: var(--borderPanel);
+}
+.book-card main{
+    padding: var(--gapMed);
+    background-color: var(--colorMain);
 }
 .book-card img{
     width: 100%;

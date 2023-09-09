@@ -9,7 +9,9 @@
     width: 300PX;
     padding: var(--gapSml);
     pointer-events: all;
-    box-shadow: 3px 2px 3px grey;
+    box-shadow: var(--shadowStd);
+    border: 5px solid;
+    border-color: var(--borderPanel);
     right: 0;
 }
 .panier-modal>div>div>div{

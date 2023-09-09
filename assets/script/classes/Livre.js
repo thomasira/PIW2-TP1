@@ -26,8 +26,8 @@ export class Livre {
     }
 
     /**
-     * injecter ses données dans le HTML du conteneur. Utiliser le contneur parent pour instancier son élément HTML. Initialiser ses boutons
-     */
+     * injecter ses données dans le HTML du conteneur. Utiliser le conteneur parent pour instancier son élément HTML. Initialiser ses boutons
+     */ 
     injectEtInit() {
         const HTML = `
             <article class="book-card" data-js-conteneur data-js-book="${this.titre}">
