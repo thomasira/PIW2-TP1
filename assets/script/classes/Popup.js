@@ -5,24 +5,26 @@ export class Popup {
     constructor() {
         const GL = GestionnaireLibrairie.instance;
         this.el = GL.el.querySelector('[data-js-popup]');
-        this.textbox = this.el.querySelector('span');
+        this.textbox = this.el.querySelector('p');
         this.isTimed = false;
-        this.isOn = false;
+        this.timeOut;
         this.init();
     }
 
     init() {
         document.addEventListener('ajouterPop', (e) => {
-            this.textbox.textContent = e.detail.titre + " a été ajouté au panier"
+            this.textbox.querySelector('strong').textContent = e.detail.titre;
+            if (this.isTimed) clearTimeout(this.timeOut);
             this.el.classList.remove('invisible');
+            this.el.classList.add('ajout');
             this.isTimed = true;
-            setTimeout(() => {
-                if (!this.isTimed) this.isOn = true;
-                console.log(this.isOn)
-                if (!this.isOn) this.el.classList.add('invisible');
-                this.isOn = false;
-                this.isTimed = false;
-            }, 3000);
+            this.timeOut = setTimeout(this.timer.bind(this), 2000);
         }) 
     }
+
+    timer() {
+        this.el.classList.add('invisible');
+        this.isTimed = false;
+    }
 }
+

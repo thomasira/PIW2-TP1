@@ -6,8 +6,10 @@
     --colorDark: rgb(7, 8, 6);
     --colorShadow: rgba(7, 8, 6, 0.507);
     --colorMain: rgb(81, 95, 125);
-    --colorSec: rgb(202, 170, 110);;
-    --colorLight: rgb(213, 218, 230);;
+    --colorSec: rgb(202, 170, 110);
+    --colorLight: rgb(213, 218, 230);
+    --colorSuccess: rgb(36, 185, 68);
+    --colorKill: rgb(158, 18, 18);
 
     /* Taille de polices */
     --fontSml: 14px;
@@ -28,4 +30,11 @@
     --gapMed: 20px;
     --gapLrg: 40px;
     --gapHuge: 80px;
+
+
+    /* Effets */
+    --shadowStd: 2px 2px 2px var(--colorShadow);
+    --btnOutset: rgb(211, 211, 211) rgb(88, 88, 88) rgb(24, 24, 24) rgb(182, 182, 182);
+    --btnInset: rgb(24, 24, 24) rgb(182, 182, 182) rgb(211, 211, 211) rgb(88, 88, 88);
+
 }

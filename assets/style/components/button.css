@@ -1,10 +1,14 @@
 
 .button-std {
     padding: 3px 7px;
-    border-radius: 2px;
-    border: 1px solid var(--colorDark);
+    border: 2px solid ;
+    border-color: var(--btnOutset);
     background-color: var(--colorLight);
 }
 .button-std:hover {
     cursor: pointer;
+}
+.button-std:active{
+    border-color: var(--btnInset);
+    background-color: var(--colorLight);
 }

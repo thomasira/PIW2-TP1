@@ -16,7 +16,6 @@ export class ModalLivre {
     }
 
     init() {
-        document.addEventListener('ouvrirModal', this.open.bind(this));
         this.el.addEventListener('click', (e) => {
             if (e.target == this.el || e.target == this.elBtnExit) this.close();
         })

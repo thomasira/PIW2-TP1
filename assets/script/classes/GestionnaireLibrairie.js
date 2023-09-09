@@ -1,10 +1,10 @@
-
 import { Livre } from './Livre.js';
 import { livres } from "../../data/livres.js";
 import { ModalLivre } from './ModalLivre.js'
 import { PanierAchat } from './PanierAchat.js';
 import { Filtre } from './Filtre.js';
 import { Popup } from './Popup.js';
+
 
 export default class GestionnaireLibrairie {
     static instance;
@@ -16,16 +16,17 @@ export default class GestionnaireLibrairie {
         this.listeLivres = livres;
         this.listeObjetsLivres = [];
         this.el = el;
-        this.panier = new PanierAchat();
-        this.modal = new ModalLivre();
-        this.filtreBox = new Filtre();
-        this.popup = new Popup;
+        new PanierAchat;
+        this.modal = new ModalLivre;
+        new Filtre;
+        new Popup;
         this.init();
     }
 
     init(){
         document.addEventListener("filtrer", this.filtrerListe.bind(this));
-        this.listeLivres.forEach((element, index) => this.listeObjetsLivres.push(new Livre(element, index)));
+        document.addEventListener('ouvrirModal', this.modal.open.bind(this.modal));
+        this.listeLivres.forEach(livre => this.listeObjetsLivres.push(new Livre(livre)));
         this.injecterListe();
     }
 

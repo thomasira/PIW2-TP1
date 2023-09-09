@@ -3,9 +3,19 @@
     position: fixed;
     bottom: var(--gapLrg);
     margin-left: auto;
-    margin-right: auto;
     min-width: 200px;
-    min-height: 50px;
-    background-color: green;
+    border-radius: 20px;
+    padding: var(--gapSml);
+    background-color: var(--colorDark);
+    color: var(--colorLight);
+    transition: opacity .2s;
+    box-shadow: var(--shadowStd);
+}
+.pop-up.invisible{
     transition: opacity 1s;
+}
+
+.pop-up.ajout span::after{
+    content: " a été ajouté au panier!";
+    color: var(--colorSuccess);
 }
