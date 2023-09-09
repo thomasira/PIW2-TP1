@@ -15,16 +15,14 @@ export class Popup {
         document.addEventListener('ajouterPop', (e) => {
             this.textbox.textContent = e.detail.titre + " a été ajouté au panier"
             this.el.classList.remove('invisible');
-            if (this.isTimed) this.isOn = true;
-            else this.isOn = false;
             this.isTimed = true;
             setTimeout(() => {
-                if (!this.isTimed) console.log('allo')
+                if (!this.isTimed) this.isOn = true;
                 console.log(this.isOn)
-                this.el.classList.add('invisible');
+                if (!this.isOn) this.el.classList.add('invisible');
+                this.isOn = false;
                 this.isTimed = false;
             }, 3000);
         }) 
     }
-
 }
