@@ -31,10 +31,10 @@
                         <h4>Panier achat</h4>
                     </header>
                     <div data-js-liste-panier>
-                        <!--injecter liste panier ici -->
+                        <!--injecter liste livres ici -->
                     </div>
-                    <div>
-                        <p><strong data-js-total></strong></p>
+                    <div data-js-total>
+                        <!-- injecter le détail du total ici-->
                     </div>
                     <button data-js-trigger="vider" class="button-std">vider</button>
                 </div>
@@ -58,8 +58,9 @@
             <span class="book-exit" data-js-trigger="exit-button">+</span>
         </div>
 
-
         <section class="librairie-box">
+
+            <!-- la boîte filtre -->
             <aside>
                 <div class="filter-box" data-js-filtreBox>
                     <button data-js-filtre="tous">Tous</button>
@@ -72,9 +73,12 @@
                     <button data-js-filtre="Savoir et science">Savoir et science</button>
                 </div>
             </aside>
+
+            <!-- la boîte de livres -->
             <div data-js-librairie-conteneur>
-                <!-- injecter liste ici -->
+                <!-- injecter liste livres ici -->
             </div>
+
         </section>
     </main>
     <footer>

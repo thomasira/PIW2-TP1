@@ -12,14 +12,14 @@ export default class GestionnaireLibrairie {
     constructor(el) {
         if (!GestionnaireLibrairie.instance) GestionnaireLibrairie.instance = this;
         else throw new Error("impossible de dupliquer cette classe");
-
-        this.listeLivres = livres;
-        this.listeObjetsLivres = [];
+        
         this.el = el;
+        this.listeLivres = livres;
+        this.objsLivre = [];
         this.panier = new PanierAchat;
         this.modal = new ModalLivre;
+        this.popup = new Popup;
         new Filtre;
-        new Popup;
         this.init();
     }
 
@@ -27,15 +27,17 @@ export default class GestionnaireLibrairie {
         document.addEventListener("filtrer", this.filtrerListe.bind(this));
         document.addEventListener('ouvrirModal', this.modal.open.bind(this.modal));
         document.addEventListener('ajouterPanier', this.panier.onHandleEvent.bind(this.panier));
-        this.listeLivres.forEach(livre => this.listeObjetsLivres.push(new Livre(livre)));
+
+        this.listeLivres.forEach(livre => this.objsLivre.push(new Livre(livre)));
         this.injecterListe();
     }
 
     injecterListe() {
-        this.listeObjetsLivres.forEach(objLivre => objLivre.injectEtInit());
+        this.objsLivre.forEach(objLivre => objLivre.injectEtInit());
     }
 
     filtrerListe(e) {
-        this.listeObjetsLivres.forEach(objLivre => objLivre.filtrer(e.detail));
+        const filtre = e.detail;
+        this.objsLivre.forEach(objLivre => objLivre.filtrer(filtre));
     }
 }

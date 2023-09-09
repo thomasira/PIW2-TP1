@@ -8,8 +8,9 @@ export class PanierAchat {
         this.modalBtn = GL.el.querySelector('[data-js-trigger="panier"]');
         this.modalBox = GL.el.querySelector('[data-js-modal="panier"]');
         this.listeLivre = this.modalBox.querySelector('[data-js-liste-panier]');
-        this.elPrix = this.modalBox.querySelector('[data-js-total]');
+        this.elTotal = this.modalBox.querySelector('[data-js-total]');
         this.btnVider = this.modalBox.querySelector('[data-js-trigger="vider"]');
+        this.prixTotal;
         this.init();
     }
 
@@ -27,10 +28,10 @@ export class PanierAchat {
     }
 
     setPanierHTML() {
-        let prixTotal = 0;
+        this.prixTotal = 0;
         this.listeLivre.innerHTML = '';
         this.panier.forEach((livre, index) => {
-            prixTotal += livre.prix;
+            this.prixTotal += livre.prix;
             const livreInfo = `
                 <div class="item-panier">
                     <small>${livre.titre}</small>
@@ -40,8 +41,9 @@ export class PanierAchat {
             this.listeLivre.insertAdjacentHTML('beforeend', livreInfo);
             if (this.listeLivre.lastElementChild) this.#btnInit(index);
         });
-        if(prixTotal == 0) this.elPrix.textContent = "Votre panier est vide.";
-        else this.elPrix.textContent = "Total: " + prixTotal + " $";
+        this.#afficherTotal();
+/*         if(prixTotal == 0) this.elPrix.textContent = "Votre panier est vide.";
+        else this.elPrix.textContent = "Total: " + prixTotal + " $"; */
     }
 
     ajouterAuPanier(livre) {
@@ -69,7 +71,22 @@ export class PanierAchat {
         });
     }
 
-    calculerSousTotal() {}
-    calculerTaxes() {}
-    calculerTotal() {}
+    #afficherTotal() {
+        let totalHTML;
+        const taxes = this.calculerTaxes();
+        const total = this.calculerTotal();
+        if (this.panier.length == 0) totalHTML = `<p>Votre panier est vide.</p>`;
+        else totalHTML = `
+            <p>Sous total: ${this.prixTotal} $</p>
+            <p>Taxes: ${taxes} $</p>
+            <p>Total: ${total} $</p>
+        `;
+        this.elTotal.innerHTML = totalHTML;
+    }
+    calculerTaxes() {
+        return (this.prixTotal * .15).toFixed(2);
+    }
+    calculerTotal() {
+        return (this.prixTotal * 1.15).toFixed(2);
+    }
 }
