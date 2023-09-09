@@ -34,7 +34,12 @@
     object-fit:cover; 
 }
 .book-card h3 {
-    font-weight: normal;
+    text-align: center;
+    padding: var(--gapSmlst);
+  /*   background-color: var(--colorSec);
+    border: 2px solid;
+    border-color: var(--btnOutset); */
+   /*  font-weight: normal; */
 }
 .book-card div {
     display: flex;

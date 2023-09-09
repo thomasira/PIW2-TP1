@@ -19,6 +19,3 @@ body>main>header>h2{
     font-size: var(--fontLrg);
     color: var(--colorLight);
 }
-body>main>*+*{
-    margin-top: var(--gapMed);
-}
