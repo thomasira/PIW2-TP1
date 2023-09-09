@@ -16,7 +16,7 @@ export default class GestionnaireLibrairie {
         this.listeLivres = livres;
         this.listeObjetsLivres = [];
         this.el = el;
-        new PanierAchat;
+        this.panier = new PanierAchat;
         this.modal = new ModalLivre;
         new Filtre;
         new Popup;
@@ -26,6 +26,7 @@ export default class GestionnaireLibrairie {
     init(){
         document.addEventListener("filtrer", this.filtrerListe.bind(this));
         document.addEventListener('ouvrirModal', this.modal.open.bind(this.modal));
+        document.addEventListener('ajouterPanier', this.panier.onHandleEvent.bind(this.panier));
         this.listeLivres.forEach(livre => this.listeObjetsLivres.push(new Livre(livre)));
         this.injecterListe();
     }

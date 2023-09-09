@@ -14,7 +14,6 @@ export class PanierAchat {
     }
 
     init() {
-        document.addEventListener('ajouterPanier', this.onHandleEvent.bind(this));
         this.modalBtn.addEventListener('click', this.afficherPanier.bind(this));
         this.btnVider.addEventListener('click', this.viderPanier.bind(this));
 
@@ -25,7 +24,6 @@ export class PanierAchat {
 
     onHandleEvent(e) {
         this.ajouterAuPanier(e.detail);
-        this.setPanierHTML();
     }
 
     setPanierHTML() {
@@ -40,14 +38,7 @@ export class PanierAchat {
                     <img data-js-jeter="${index}" src="./assets/icon/trash.png" alt="icon-poubelle" title="enlever l'item">
                 </div>`;
             this.listeLivre.insertAdjacentHTML('beforeend', livreInfo);
-            if (this.listeLivre.lastElementChild) {
-                const btnEnlever = this.listeLivre.lastElementChild.querySelector(`[data-js-jeter="${index}"]`);
-                btnEnlever.addEventListener('click', (e) => {
-                    this.panier.splice(index, 1);
-                    GestionnaireDonnees.enregistrerDonneesLocales('panier', this.panier);
-                    this.setPanierHTML();
-                })
-            }
+            if (this.listeLivre.lastElementChild) this.#btnInit(index);
         });
         if(prixTotal == 0) this.elPrix.textContent = "Votre panier est vide.";
         else this.elPrix.textContent = "Total: " + prixTotal + " $";
@@ -56,6 +47,7 @@ export class PanierAchat {
     ajouterAuPanier(livre) {
         this.panier.push(livre);
         GestionnaireDonnees.enregistrerDonneesLocales('panier', this.panier);
+        this.setPanierHTML();
     }
 
     afficherPanier() {
@@ -66,6 +58,15 @@ export class PanierAchat {
         GestionnaireDonnees.supprimerDonneesLocales('panier');
         this.panier = [];
         this.setPanierHTML();
+    }
+
+    #btnInit(index) {
+        const btnEnlever = this.listeLivre.lastElementChild.querySelector(`[data-js-jeter]`);
+        btnEnlever.addEventListener('click', (e) => {
+            this.panier.splice(index, 1);
+            GestionnaireDonnees.enregistrerDonneesLocales('panier', this.panier);
+            this.setPanierHTML();
+        });
     }
 
     calculerSousTotal() {}

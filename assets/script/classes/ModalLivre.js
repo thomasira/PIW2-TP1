@@ -28,7 +28,8 @@ export class ModalLivre {
         this.elPages.innerHTML = livre.pages;
         this.elDescription.innerHTML = livre.description;
         this.elImage.src = livre.image;
-        this.elImage.alt = livre.titre;
+        this.elImage.title = "couverture: " + livre.titre;
+        this.elImage.alt = "couverture: " + livre.titre;
     }
 
     open(e) {
@@ -39,6 +40,6 @@ export class ModalLivre {
 
     close() {
         this.el.classList.toggle('invisible');
-        if (this.body.classList.contains('no-scroll')) this.body.classList.remove('no-scroll');
+        this.body.classList.toggle('no-scroll');
     }
 }
