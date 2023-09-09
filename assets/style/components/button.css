@@ -1,14 +1,17 @@
 
 .button-std {
     padding: 3px 7px;
-    border: 2px solid ;
+    font-family: var(--fontBtn);
+    font-weight: bold;
+    border: 2px solid;
     border-color: var(--btnOutset);
-    background-color: var(--colorLight);
+    background-color: var(--colorMain);
 }
 .button-std:hover {
     cursor: pointer;
 }
 .button-std:active{
     border-color: var(--btnInset);
-    background-color: var(--colorLight);
+    background-color: var(--colorSec);
+    transform: translateY(1px) translateX(1px);
 }

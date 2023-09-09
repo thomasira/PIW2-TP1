@@ -2,19 +2,36 @@
 .book-card {
     display: flex;
     flex-flow: column;
-    gap: var(--gapSml);
-    justify-content: space-between;
-    box-shadow: var(--shadowStd);
+    padding: var(--gapSmlr);
+    gap: var(--gapSmlr);
+    background-color: var(--colorMain);
+/*     box-shadow: var(--shadowStd); */
     border: 5px solid;
     border-color: var(--borderPanel);
 }
 .book-card main{
+    flex: 1;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    gap: var(--gapSmlst);
     padding: var(--gapMed);
-    background-color: var(--colorMain);
+    border: 2px solid;
+    border-color: var(--btnOutset);
+    background-color: var(--colorSec);
+}
+.book-card picture{
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 13/16;
+    overflow: hidden;
+    border: 3px solid;
+    border-color: var(--btnInset);
 }
 .book-card img{
-    width: 100%;
-    height: auto;
+    height: 100%; 
+    width: 100%; 
+    object-fit:cover; 
 }
 .book-card h3 {
     font-weight: normal;
@@ -26,4 +43,8 @@
 }
 .book-card main>*+* {
     margin-top: var(--gapSmlr);
+}
+
+.book-card>picture:hover{
+    cursor: pointer;
 }

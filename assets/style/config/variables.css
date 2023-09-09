@@ -1,13 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Faustina:ital,wght@0,400;0,500;1,300&family=Mulish:wght@300;400&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@400;500&family=Roboto:ital@0;1&family=Vollkorn:wght@400;600&display=swap');
 :root{
     
+    /* Palette couleurs config*/
+    --confColorDark: rgb(7, 8, 6);
+    --confColorLight: rgb(213, 218, 230);
+    --confFont: monospace;
+
+
     /* Palette de couleurs */
     --colorDark: rgb(7, 8, 6);
     --colorShadow: rgba(7, 8, 6, 0.507);
-    --colorMain: rgb(81, 95, 125);
-    --colorSec: rgb(202, 170, 110);
-    --colorLight: rgb(213, 218, 230);
+    --colorMain: rgb(158, 161, 167);
+    --colorSec: rgb(126, 127, 129);
+    --colorLight: rgb(221, 226, 236);
     --colorSuccess: rgb(36, 185, 68);
     --colorKill: rgb(236, 44, 44);
 
@@ -20,8 +25,9 @@
     --fontLrgest: 96px;
 
     /* Police */
-    --fontText: 'Mulish', sans-serif;
-    --fontHead: 'Faustina', serif;
+    --fontText: 'Roboto', sans-serif;
+    --fontHead: 'Vollkorn', serif;
+    --fontBtn: 'Assistant', monospace;
 
     /* Espacement */
     --gapSmlst: 5px;

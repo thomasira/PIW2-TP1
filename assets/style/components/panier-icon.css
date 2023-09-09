@@ -1,8 +1,9 @@
 
 .panier-icon{
-    padding: var(--gapSmlr);
-    background: none;
-    border: none;
+    padding: var(--gapSmlst);
+    background: var(--colorMain);
+    border: 2px solid;
+    border-color: var(--btnOutset);
 }
 .panier-icon>img{
     width: 40px;
@@ -10,3 +11,5 @@
 .panier-icon:hover{
     cursor: pointer;
 }
+
+

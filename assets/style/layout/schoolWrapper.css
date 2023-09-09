@@ -4,10 +4,14 @@ body>header{
     justify-content: space-between;
     gap: var(--gapLrg);
     padding: var(--gapSmlr);
-    background-color: var(--colorDark);
-    color: var(--colorLight);
+    background-color: var(--confColorDark);
+    color: var(--confColorLight);
+}
+body>footer, body>header {
+    font-family: var(--confFont);
 }
 body>header>h1{
+    font-family: var(--confFont);
     font-size: var(--fontSml);
 }
 body>footer{
@@ -17,10 +21,10 @@ body>footer{
     align-items: center;
     gap: var(--gapLrg);
     padding: var(--gapSmlr);
-    background-color: var(--colorDark);
-    color: var(--colorLight);
+    background-color: var(--confColorDark);
+    color: var(--confColorLight);
 }
 body>footer>h4{
+    font-family: var(--confFont);
     font-size: var(--fontSml);
-    font-weight: normal;
 }

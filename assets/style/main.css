@@ -3,6 +3,8 @@
 @import url(./config/reset.css);
 
 @import url(./base/typo.css);
+@import url(./base/base.css);
+
 
 @import url(./layout/schoolWrapper.css);
 @import url(./layout/structure.css);

@@ -6,8 +6,10 @@
 }
 .librairie-box aside{
     flex: 0 0 200px;
+    padding: var(--gapMed);
 }
 .librairie-box>div{
+    padding: var(--gapMed);
     flex: 4;
     display: flex;
     flex-flow: row wrap;
@@ -16,5 +18,5 @@
     column-gap: var(--gapMed);
 }
 .librairie-box>div>*{
-    flex: 0 0 250px;
+    flex: 0 0 300px;
 }

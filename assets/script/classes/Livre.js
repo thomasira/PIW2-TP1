@@ -32,7 +32,7 @@ export class Livre {
         const HTML = `
             <article class="book-card" data-js-conteneur data-js-book="${this.titre}">
                 <picture>
-                    <img src="${this.image}" alt="${this.image}" data-js-trigger="book">
+                    <img src="${this.image}" alt="${this.image}" title="voir le livre" data-js-trigger="book">
                 </picture>
                 <main>
                     <h3>${this.titre}</h3>

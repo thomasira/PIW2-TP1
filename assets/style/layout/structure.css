@@ -1,14 +1,23 @@
 
 body>main{
-    padding: var(--gapLrg);
+    background-color: var(--colorLight);
     max-width: 1400px;
     margin: auto;
 }
 body>main>header{
+    background: linear-gradient(to left, #eee, #333);
+    border: 3px solid;
+    border-color: var(--btnOutset);
     display: flex;
     flex-flow: row;
     justify-content: space-between;
+    align-items: center;
+    padding: var(--gapSmlr);
     gap: var(--gapLrg);
+}
+body>main>header>h2{
+    font-size: var(--fontLrg);
+    color: var(--colorLight);
 }
 body>main>*+*{
     margin-top: var(--gapMed);
