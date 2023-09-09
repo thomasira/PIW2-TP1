@@ -24,3 +24,6 @@
 .panier-modal div>*+*{
     margin-top: var(--gapSmlr);
 }
+.panier-modal img{
+    cursor: pointer;
+}

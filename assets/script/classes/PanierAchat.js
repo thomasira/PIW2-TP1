@@ -43,7 +43,6 @@ export class PanierAchat {
             if (this.listeLivre.lastElementChild) {
                 const btnEnlever = this.listeLivre.lastElementChild.querySelector(`[data-js-jeter="${index}"]`);
                 btnEnlever.addEventListener('click', (e) => {
-                    console.log(index);
                     this.panier.splice(index, 1);
                     GestionnaireDonnees.enregistrerDonneesLocales('panier', this.panier);
                     this.setPanierHTML();
