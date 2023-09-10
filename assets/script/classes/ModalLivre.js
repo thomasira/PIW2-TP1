@@ -27,7 +27,10 @@ export class ModalLivre {
      */
     init() {
         this.el.addEventListener('click', (e) => {
-            if (e.target == this.el || e.target == this.elBtnExit) this.close();
+            if (e.target == this.el 
+                || e.target == this.elBtnExit 
+                || e.target == this.conteneur.closest('div')) 
+            this.close();
         })
         this.elBtnAjout.addEventListener('click', () => {
             document.dispatchEvent(

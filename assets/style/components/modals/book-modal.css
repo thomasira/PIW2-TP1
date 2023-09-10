@@ -10,6 +10,7 @@
     padding: var(--gapHuge);
     opacity: 1;
     background-color: rgba(14, 12, 12, 0.952);
+    overflow-y: auto;
     z-index: 1;
 }
 .book-modal>div{
@@ -42,6 +43,7 @@
     background-color: var(--colorMain);
 }
 .book-modal article>*{
+    min-width: 300px;
     flex: 1;
 }
 .book-modal picture{

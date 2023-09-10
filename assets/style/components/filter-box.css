@@ -4,15 +4,17 @@
     align-self: start;
     max-width: max-content;
     padding: var(--gapSml);
-    background-color: var(--colorLight);
+    background-color: var(--accentSec);
     box-shadow: var(--shadowStd);
     border: 5px solid;
-    border-color: var(--borderPanel);
+    border-color: var(--panelSec);
 }
 .filter-box button{
     display: block;
     border: none;
     background: none;
+    font-family: var(--fontBtn);
+    color: var(--colorLight);
     font-size: var(--fontSml);
 }
 .filter-box button:hover{

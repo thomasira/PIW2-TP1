@@ -43,8 +43,8 @@
 
     /* Effets */
     --borderPanel: rgb(211, 211, 211) rgb(88, 88, 88) rgb(24, 24, 24) rgb(182, 182, 182);
-    --panelMain: rgb(218, 103, 103) rgb(61, 24, 24) rgb(27, 7, 7) rgb(192, 87, 87);
-    --panelSec: rgb(130, 185, 125) rgb(30, 58, 29) rgb(10, 22, 11) rgb(110, 182, 110);
+    --panelMain: rgb(218, 103, 103) rgb(61, 24, 24) rgb(27, 7, 7) rgb(136, 61, 61);
+    --panelSec: rgb(130, 185, 125) rgb(30, 58, 29) rgb(10, 22, 11) rgb(80, 128, 80);
     --shadowStd: 2px 2px 2px var(--colorShadow);
     --btnOutset: rgb(211, 211, 211) rgb(88, 88, 88) rgb(24, 24, 24) rgb(182, 182, 182);
     --btnInset: rgb(24, 24, 24) rgb(182, 182, 182) rgb(211, 211, 211) rgb(88, 88, 88);
