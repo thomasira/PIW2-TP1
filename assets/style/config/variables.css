@@ -12,9 +12,11 @@
     --colorShadow: rgba(7, 8, 6, 0.507);
     --colorMain: rgb(158, 161, 167);
     --colorSec: rgb(126, 127, 129);
-    --colorLight: rgb(221, 226, 236);
-    --colorSuccess: rgb(36, 185, 68);
-    --colorKill: rgb(236, 44, 44);
+    --colorLight: rgb(215, 218, 214);
+    --accentMain: rgb(80, 19, 19);
+    --accentSec: rgb(30, 59, 36);
+/*     --colorSuccess: rgb(12, 61, 22);
+    --colorKill: rgb(236, 44, 44); */
 
     /* Taille de polices */
     --fontSmlst: 14px;
@@ -41,6 +43,8 @@
 
     /* Effets */
     --borderPanel: rgb(211, 211, 211) rgb(88, 88, 88) rgb(24, 24, 24) rgb(182, 182, 182);
+    --panelMain: rgb(218, 103, 103) rgb(61, 24, 24) rgb(27, 7, 7) rgb(192, 87, 87);
+    --panelSec: rgb(130, 185, 125) rgb(30, 58, 29) rgb(10, 22, 11) rgb(110, 182, 110);
     --shadowStd: 2px 2px 2px var(--colorShadow);
     --btnOutset: rgb(211, 211, 211) rgb(88, 88, 88) rgb(24, 24, 24) rgb(182, 182, 182);
     --btnInset: rgb(24, 24, 24) rgb(182, 182, 182) rgb(211, 211, 211) rgb(88, 88, 88);

@@ -14,7 +14,10 @@ export class PanierAchat {
         const GL = GestionnaireLibrairie.instance;
         this.modalBtn = GL.el.querySelector('[data-js-trigger="panier"]');
         this.modalBox = GL.el.querySelector('[data-js-modal="panier"]');
-        this.listeLivre = this.modalBox.querySelector('[data-js-liste-panier]');
+        this.elConteneurListe = this.modalBox.querySelector('[data-js-conteneur="panier-livre"]');
+        this.elPanierVide = this.modalBox.querySelector('[data-js-vide]');
+        this.elListeHead = this.elConteneurListe.querySelector('hgroup');
+        this.elListeLivre = this.modalBox.querySelector('[data-js-liste]');
         this.elTotal = this.modalBox.querySelector('[data-js-total]');
         this.btnVider = this.modalBox.querySelector('[data-js-trigger="vider"]');
         this.prixTotal;
@@ -47,22 +50,33 @@ export class PanierAchat {
      * Calculer le sous total et injecter le HTML de chaque item de son panier de livre. Initialiser les boutons pour chaque item. Afficher total
      */
     setPanierHTML() {
-        this.prixTotal = 0;
-        this.listeLivre.innerHTML = '';
-        this.panier.forEach((livre, index) => {
-            this.prixTotal += livre.prix;
-            const livreInfo = `
-                <div class="item-panier">
-                    <small>${livre.titre}</small>
-                    <div>
-                        <span>${livre.prix}$</span>
-                        <img data-js-jeter="${index}" src="./assets/icon/trash.png" alt="icon-poubelle" title="enlever l'item">
-                    </div>
-                </div>`;
-            this.listeLivre.insertAdjacentHTML('beforeend', livreInfo);
-            if (this.listeLivre.lastElementChild) this.#btnInit(index);
-        });
-        this.#afficherTotal();
+        const elHeader = this.elListeHead.querySelector('h4');
+        if (this.panier.length == 0){
+            this.elConteneurListe.classList.add('non-exist');
+            this.elPanierVide.classList.remove('non-exist');
+        }
+        else {
+            this.elConteneurListe.classList.remove('non-exist');
+            this.elPanierVide.classList.add('non-exist');
+            if (this.panier.length == 1) elHeader.textContent = "Livre";
+            else elHeader.textContent = "Livres";
+            this.prixTotal = 0;
+            this.elListeLivre.innerHTML = '';
+            this.panier.forEach((livre, index) => {
+                this.prixTotal += livre.prix;
+                const livreInfo = `
+                    <article>
+                        <small>${livre.titre}</small>
+                        <div>
+                            <span>${livre.prix}$</span>
+                            <img data-js-jeter="${index}" src="./assets/icon/trash.png" alt="icon-poubelle" title="enlever l'item">
+                        </div>
+                    </article>`;
+                this.elListeLivre.insertAdjacentHTML('beforeend', livreInfo);
+                if (this.elListeLivre.lastElementChild) this.#btnInit(index);
+            });
+            this.#afficherTotal();
+        }
     }
 
     /**
@@ -88,6 +102,7 @@ export class PanierAchat {
         GestionnaireDonnees.supprimerDonneesLocales('panier');
         this.panier = [];
         this.setPanierHTML();
+        this.afficherPanier();
     }
 
     /**
@@ -95,7 +110,7 @@ export class PanierAchat {
      * @param {*} index 
      */
     #btnInit(index) {
-        const btnEnlever = this.listeLivre.lastElementChild.querySelector(`[data-js-jeter]`);
+        const btnEnlever = this.elListeLivre.lastElementChild.querySelector(`[data-js-jeter]`);
         btnEnlever.addEventListener('click', (e) => {
             document.dispatchEvent(
                 new CustomEvent("enleverPop", { detail: this.panier[index] })
@@ -115,8 +130,8 @@ export class PanierAchat {
         const total = this.calculerTotal();
         if (this.panier.length == 0) totalHTML = `<p>Votre panier est vide.</p>`;
         else totalHTML = `
-            <p>Sous total: ${this.prixTotal} $</p>
-            <p>Taxes: ${taxes} $</p>
+            <small>Sous total: ${this.prixTotal} $</small>
+            <small>Taxes: ${taxes} $</small>
             <p>Total: ${total} $</p>
         `;
         this.elTotal.innerHTML = totalHTML;

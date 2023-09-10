@@ -10,8 +10,10 @@ export class ModalLivre {
         this.body = document.body;
         this.el = document.querySelector('[data-js-modal="livre"]');
         this.conteneur = this.el.querySelector('[data-js-modal="livre-conteneur"]');
+        this.livre;
         this.elTitre = this.el.querySelector('[data-js-livre="titre"]');
-        this.elBtnExit = this.el.querySelector('[data-js-trigger="exit-button"]')
+        this.elBtnExit = this.el.querySelector('[data-js-trigger="exit-button"]');
+        this.elBtnAjout = this.el.querySelector('[data-js-trigger="ajout"]');
         this.elAuteur = this.el.querySelector('[data-js-livre="auteur"]');
         this.elEditeur = this.el.querySelector('[data-js-livre="editeur"]');
         this.elPages = this.el.querySelector('[data-js-livre="pages"]');
@@ -27,6 +29,14 @@ export class ModalLivre {
         this.el.addEventListener('click', (e) => {
             if (e.target == this.el || e.target == this.elBtnExit) this.close();
         })
+        this.elBtnAjout.addEventListener('click', () => {
+            document.dispatchEvent(
+                new CustomEvent("ajouterPanier", { detail: this.livre })
+            )
+            document.dispatchEvent(
+                new CustomEvent("ajouterPop", { detail: this.livre })
+            );
+        });
     }
 
     /**
@@ -49,7 +59,8 @@ export class ModalLivre {
      * @param {*} e 
      */
     open(e) {
-        this.setLivre(e.detail);
+        this.livre = e.detail;
+        this.setLivre(this.livre);
         this.body.classList.toggle('no-scroll');
         this.el.classList.toggle('invisible');
     }

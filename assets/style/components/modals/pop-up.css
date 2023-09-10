@@ -1,26 +1,30 @@
 
 .pop-up{
     position: fixed;
+    z-index: 2;
     bottom: var(--gapLrg);
     margin-left: auto;
     min-width: 200px;
-    border-radius: 20px;
     padding: var(--gapSml);
-    background-color: var(--colorDark);
+    border: 3px solid;
     color: var(--colorLight);
-    transition: opacity 2s;
     box-shadow: var(--shadowStd);
+    transition: opacity .5s;
 }
 .pop-up.invisible{
-    transition: opacity 4s;
+    transition: opacity 1s;
 }
-
+.pop-up.ajout{
+    border-color: var(--panelSec);
+    background-color: var(--accentSec);
+}
 .pop-up.ajout span::after{
     content: " a été ajouté au panier!";
-    color: var(--colorSuccess);
 }
-
+.pop-up.supprime{
+    border-color: var(--panelMain);
+    background-color: var(--accentMain);
+}
 .pop-up.supprime span::after{
     content: " a été supprimé du panier!";
-    color: var(--colorKill);
 }

@@ -30,32 +30,46 @@
                     <header>
                         <h4>Panier achat</h4>
                     </header>
-                    <div data-js-liste-panier>
-                        <!--injecter liste livres ici -->
+                    <div data-js-vide>
+                        <p>Votre panier est vide</p>
                     </div>
-                    <div data-js-total>
-                        <!-- injecter le détail du total ici-->
+                    <div data-js-conteneur="panier-livre">
+                        <hgroup>
+                            <h4></h4>
+                            <p>prix</p>
+                        </hgroup>
+                        <div data-js-liste>
+                            <!--injecter liste livres ici -->
+                        </div>
+                        <div data-js-total>
+                            <!-- injecter le détail du total ici-->
+                        </div>
+                        <button data-js-trigger="vider" class="button-std">vider</button>
                     </div>
-                    <button data-js-trigger="vider" class="button-std">vider</button>
                 </div>
             </div>
         </header>
 
         <!-- modal livre -->
         <div class="book-modal invisible" data-js-modal="livre">
-            <article data-js-modal="livre-conteneur">
-                <picture>
-                    <img src="" alt="">
-                </picture>
-                <div>
-                    <h2 data-js-livre="titre"></h2>
-                    <p><small>Auteur: </small><span data-js-livre="auteur"></span></p>
-                    <p><small>Éditeur: </small><span data-js-livre="editeur"></span></p>
-                    <p><small>pages: </small><span data-js-livre="pages"></span></p>
-                    <p data-js-livre="description"></p>
-                </div>
-            </article>
-            <span class="book-exit" data-js-trigger="exit-button">+</span>
+            <div>
+                <article data-js-modal="livre-conteneur">
+                    <picture>
+                        <img src="" alt="">
+                    </picture>
+                    <section>
+                        <h2 data-js-livre="titre"></h2>
+                        <div>
+                            <p><small>Auteur: </small><span data-js-livre="auteur"></span></p>
+                            <p><small>Éditeur: </small><span data-js-livre="editeur"></span></p>
+                            <p><small>pages: </small><span data-js-livre="pages"></span></p>
+                            <p data-js-livre="description"></p>
+                        </div>
+                        <button class="button-std" data-js-trigger="ajout">Ajouter au panier</button>
+                    </section>
+                </article>
+                <span class="book-exit" data-js-trigger="exit-button">+</span>
+            </div>
         </div>
 
         <section class="librairie-box">
