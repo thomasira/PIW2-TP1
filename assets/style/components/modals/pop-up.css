@@ -8,11 +8,11 @@
     padding: var(--gapSml);
     background-color: var(--colorDark);
     color: var(--colorLight);
-    transition: opacity .2s;
+    transition: opacity 2s;
     box-shadow: var(--shadowStd);
 }
 .pop-up.invisible{
-    transition: opacity 1s;
+    transition: opacity 4s;
 }
 
 .pop-up.ajout span::after{

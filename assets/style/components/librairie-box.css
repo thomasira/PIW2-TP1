@@ -5,18 +5,19 @@
     gap: var(--gapMed);
 }
 .librairie-box aside{
-    flex: 0 0 200px;
+    flex: 0 0 230px;
     padding: var(--gapMed);
 }
 .librairie-box>div{
     padding: var(--gapMed);
-    flex: 4;
+    flex: 5;
     display: flex;
     flex-flow: row wrap;
-    justify-content: center;
+    justify-content: start;
     row-gap: var(--gapLrg);
     column-gap: var(--gapMed);
 }
 .librairie-box>div>*{
-    flex: 0 0 300px;
+    max-width: 500px;
+    flex: 1 0 300px;
 }

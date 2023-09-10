@@ -17,8 +17,9 @@
     --colorKill: rgb(236, 44, 44);
 
     /* Taille de polices */
-    --fontSml: 14px;
-    --fontText: 18px;
+    --fontSmlst: 14px;
+    --fontSmlr: 16px;
+    --fontSml: 18px;
     --fontMed: 24px;
     --fontLrg: 36px;
     --fontLrger: 48px;

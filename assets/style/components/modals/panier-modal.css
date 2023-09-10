@@ -7,23 +7,47 @@
     position: absolute;
     background-color: var(--colorLight);
     width: 300PX;
-    padding: var(--gapSml);
+    padding: var(--gapSmlr);
+    gap: var(--gapSmlst);
     pointer-events: all;
     box-shadow: var(--shadowStd);
     border: 5px solid;
     border-color: var(--borderPanel);
     right: 0;
 }
+.panier-modal>div>div>*+*{
+    margin-top: var(--gapSmlst);
+}
+
+/* boite total*/
+.panier-modal>div>div:last-of-type{
+    margin-left: auto;
+    background-color: var(--colorMain);
+    width: max-content;
+}
+.panier-modal>div>div:last-of-type p{
+    font-size: var(--fontSmlst);
+}
+
+/*item du panier*/
 .panier-modal>div>div>div{
+    background-color: var(--colorSec);
     display: flex;
     align-items: end;
     justify-content: space-between;
     gap: var(--gapSmlr);
 }
+
+/**/prix+poubelle*/
+.panier-modal>div>div>div>div{
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+}
 .panier-modal>div>div>*{
     flex: 1;
 }
-.panier-modal div>*+*{
+.panier-modal>div>*+*{
     margin-top: var(--gapSmlr);
 }
 .panier-modal img{
