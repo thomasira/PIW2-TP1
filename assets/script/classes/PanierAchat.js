@@ -54,8 +54,10 @@ export class PanierAchat {
             const livreInfo = `
                 <div class="item-panier">
                     <small>${livre.titre}</small>
-                    <div class="prix">${livre.prix}$</div>
-                    <img data-js-jeter="${index}" src="./assets/icon/trash.png" alt="icon-poubelle" title="enlever l'item">
+                    <div>
+                        <span>${livre.prix}$</span>
+                        <img data-js-jeter="${index}" src="./assets/icon/trash.png" alt="icon-poubelle" title="enlever l'item">
+                    </div>
                 </div>`;
             this.listeLivre.insertAdjacentHTML('beforeend', livreInfo);
             if (this.listeLivre.lastElementChild) this.#btnInit(index);
